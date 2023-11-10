@@ -1,0 +1,111 @@
+app.fondo='negro'
+    
+Rotulo('*no a escala', 340,370,relleno='blanco',tamaño=16)
+### sol
+sol= Estrella(200,200,35,400,relleno=gradiente('naranja','amarillo','rojoNaranja'))
+
+### mercurio
+mercurio= Grupo(
+    Círculo(200,200,60,relleno=None, borde='grisOscuro'),
+    Círculo(205,140,12,relleno=gradiente('nieve', 'lino','plateado',inicio='izquierda'))
+    )
+    
+### venus
+venus= Grupo(
+    Círculo(200,200,100,relleno=None, borde='grisOscuro'),
+    Círculo(200,100,10,relleno=gradiente('rojoNaranja','naranjaOscuro','oro'))
+    )
+### tierra 
+tierra= Grupo(
+    Círculo(200, 200, 130, relleno=None, borde='grisOscuro'),
+    Círculo(200,70,13,relleno=gradiente('verde', 'azulreal', inicio='izquierda-superior')),
+    Círculo(215,60,6,relleno=gradiente('nieve', 'plateado', 'lino','plateado', 'grisOscuro', 'negro',inicio='izquierda'))
+    )
+    
+### Saturno
+saturno= Grupo(
+    Círculo(200,200,170, relleno=None, borde= 'grisOscuro'),
+    Círculo(200,30,15, relleno=gradiente('varillaDoradaPalida','madera','mocasín','lino','varillaDoradaPalida','madera','mocasín','lino',inicio= 'superior')),
+    Ovalo(200,30,70,8,relleno=None, borde=gradiente('varillaDoradaPalida','madera','mocasín','lino'),anchuraDeBorde=3, rotarAngulo= -45)
+    )
+### meteoritos
+meteoro1=Grupo(
+    Arc(800,0,80,80,180,10,relleno=gradiente('negro','negro','naranja','amarillo','rojoNaranja'),rotarAngulo=45),
+    Circulo(770,25,6,relleno='tierra')
+    )
+meteoro2= Grupo(
+    Arc(900,0,80,80,180,10,relleno=gradiente('negro','negro','naranja','amarillo','rojoNaranja'),rotarAngulo=45),
+    Circulo(870,25,6,relleno='tierra')
+    )
+meteoro3= Grupo(
+    Arc(700,0,80,80,180,10,relleno=gradiente('negro','negro','naranja','amarillo','rojoNaranja'),rotarAngulo=45),
+    Circulo(670,25,6,relleno='tierra')
+    )
+meteoro4=Grupo(
+    Arc(600,0,80,80,180,10,relleno=gradiente('negro','negro','naranja','amarillo','rojoNaranja'),rotarAngulo=45),
+    Circulo(570,25,6,relleno='tierra')
+    )
+meteoro5=Grupo(
+    Arc(800,0,80,80,180,10,relleno=gradiente('negro','negro','naranja','amarillo','rojoNaranja'),rotarAngulo=45),
+    Circulo(770,25,6,relleno='tierra')
+    )
+meteoro6=Grupo(
+    Arc(575,864,80,80,180,10,relleno=gradiente('negro','negro','naranja','amarillo','rojoNaranja',),rotarAngulo=145),
+    Circulo(555,830,5,relleno='tierra')
+    )
+meteoro1.dx = 6
+meteoro1.dy = 3
+meteoro2.dx = 3
+meteoro2.dy = 6
+meteoro3.dx = 4
+meteoro3.dy = 2
+meteoro4.dx = 6
+meteoro4.dy = 12
+meteoro5.dx = 8
+meteoro5.dy = 4
+meteoro6.dx = 2
+meteoro6.dy = 3
+tierra.dirección = 'sentido-horario'
+mercurio.direción = 'sentido-horario'
+venus.direción = 'sentido-antihorario'
+saturno.direción = 'sentido-antihorario'
+
+def enTeclaPresionada(tecla):
+    if (tecla == 'derecha'):
+        tierra.direción = 'sentido-horario'
+        mercurio.direción = 'sentido-horario'
+        venus.direción = 'sentido-antihorario'
+        saturno.direción = 'sentido-antihorario'
+    elif (tecla == 'izquierda'):
+        tierra.direción = 'sentido-antihorario'
+        mercurio.direción = 'sentido-antihorario'
+        venus.direción = 'sentido-horario'
+        saturno.direción = 'sentido-horario'
+def enPaso():
+    if ( tierra.dirección == 'sentido-horario'):
+        tierra.rotarÁngulo += 3
+        mercurio.rotarAngulo += 8
+        venus.rotarAngulo -= 4
+        saturno.rotarAngulo -= 1 
+
+    else:
+        tierra.rotarÁngulo -= 3
+        mercurio.rotarAngulo -= 8
+        venus.rotarAngulo += 4
+        saturno.rotarAngulo += 1
+        sol.puntos += 1
+    meteoro1.centroX -= meteoro1.dx
+    meteoro1.centroY += meteoro1.dy
+    meteoro2.centroX -= meteoro2.dx
+    meteoro2.centroY += meteoro2.dy
+    meteoro3.centroX -= meteoro3.dx
+    meteoro3.centroY += meteoro3.dy
+    meteoro4.centroX -= meteoro4.dx
+    meteoro4.centroY += meteoro4.dy
+    meteoro5.centroX -= meteoro5.dx
+    meteoro5.centroY += meteoro5.dy
+    meteoro6.centroX -= meteoro6.dx
+    meteoro6.centroY -= meteoro6.dy 
+
+    
+
