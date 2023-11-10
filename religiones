@@ -1,0 +1,49 @@
+###info
+m='millones'
+s='seguidores'
+porcentaje='%'
+poblaciónBase=7600
+cristianismo= 2300
+islam=1900
+hinduismo=1900
+budismo=520
+religionesChinas=394
+religionesAfroamericanas=100
+ateos=1200
+print(f'la población base es de {poblaciónBase} {m}')
+print(f'los cristianos tienen {cristianismo} {m} de {s}')
+print(f'la religión islam tiene {islam} {m} de {s}')
+print(f'la religión del hinduismo tiene {hinduismo} {m} de {s}')
+print(f'la religión del budismo tiene  {budismo} {m} de {s}')
+print(f'las religiónes tradicionales chinas tienen {religionesChinas} {m} de {s}')
+print(f'las religiónes afroamericanas tienen {religionesAfroamericanas} {m} de {s}')
+print(f'{ateos} {m} son ateos, es decir que no siguen ninguna religión')
+###porcentaje y grados
+def porcentaje():
+    porcentaje='%'
+    porcentaje1=(cristianismo / poblaciónBase) / 360 * 100 
+    print(f'{porcentaje1}{porcentaje} cristianos')
+    porcentaje2=(islam / poblaciónBase) / 360 * 100 
+    print(f'{porcentaje2}{porcentaje} islam')
+    porcentaje3=(hinduismo / poblaciónBase)/ 360 * 100
+    print(f'{porcentaje3}{porcentaje} hinduismo')
+    porcentaje4=(budismo / poblaciónBase)/ 360 * 100 
+    print(f'{porcentaje4}{porcentaje} budismo')
+    porcentaje5=(religionesChinas / poblaciónBase)/ 360 * 100 
+    print(f'{porcentaje5}{porcentaje} religionesChinas')
+    porcentaje6=(religionesAfroamericanas / poblaciónBase)/ 360 * 100
+    print(f'{porcentaje6}{porcentaje} religionesAfroamericanas')
+    porcentaje7=(ateos / poblaciónBase)/ 360 * 100
+    print(f'{porcentaje7}{porcentaje} ateos')
+    Circulo(200,200,200)
+    Arc(200,200,400,400,0,84,relleno='rojo')
+    Arc(200,200,400,400,84,69,relleno='azulCieloProfundo')
+    Arc(200,200,400,400,153,69,relleno='naranja')
+    Arc(200,200,400,400,222,19,relleno='purpura')
+    Arc(200,200,400,400,241,14,relleno='verde')
+    Arc(200,200,400,400,255,3,relleno='marronCuero')
+    Arc(200,200,400,400,258,43,relleno='rosadoFuerte')
+
+
+porcentaje()
+    
